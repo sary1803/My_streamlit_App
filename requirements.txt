@@ -1,2 +1,6 @@
-pip matplolib
-pip altair
+matplolib
+altair
+pandas 
+numpy
+time
+datetime
