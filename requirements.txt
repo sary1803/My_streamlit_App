@@ -1,3 +1,4 @@
+pip==21.2.4
 matplolib
 altair
 pandas 
