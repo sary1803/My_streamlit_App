@@ -22,8 +22,12 @@ def decorateur(function):
         return modified_function
 
 @st.cache
-def download(fichier_csv):
-         df = pd.read_csv(fichier_csv)[:100]
+def downloaduber():
+         df = pd.read_csv('uber_raw_data_apr14.csv')
+         return df
+@st.cache
+def downloadny():
+         df = pd.read_csv('ny-trips-data.csv')
          return df
 @decorateur
 @st.cache
@@ -77,12 +81,12 @@ def groupbyvendor(df):
         res= df.groupby('VendorID').agg('sum')
         return res
 #uber
-df=download('uber_raw_data_apr14.csv')
+df=downloaduber()
 df2=uber_transform(df)
 df3= dataformap1(df)
 
 #trips
-df4= download('ny-trips-data.csv')
+df4= downloadny()
 df5=trips_transform(df4)
 
 
